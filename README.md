@@ -166,5 +166,22 @@ CREATE (p)-[r: Has_Disease]->(d)
 RETURN p, d
 ```
 
+#### 3// Paul
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Paul graph" AND d. diseaseType = "Kidney Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Paul graph" AND d. diseaseType = "Heart Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Paul graph" AND d. diseaseType = "Blood Pressure" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
 
+####
 
