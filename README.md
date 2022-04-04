@@ -29,24 +29,43 @@ Create a graph database that has 20 patients with 3 properties – 10 should be 
 ![1st 5 females](https://user-images.githubusercontent.com/70437668/161478794-4f98996a-49cb-4a68-b04d-e96ad5f1627a.jpg)
 
 Name: "Orren graph"	Age: 25	Sex: "M" 
+
 Name: "Joe graph"	Age: 27	Sex: "M" 
+
 Name: "Paul graph"	Age: 55	Sex: "M" 
+
 Name: "David graph"	Age: 42	Sex: "M" 
+
 Name: "Peter graph"	Age: 35	Sex: "M" 
+
 Name: "Andrew graph"	Age: 26	Sex: "M" 
+
 Name: "Henry graph"	Age: 29	Sex: "M" 
+
 Name: "Patrick graph"	Age: 34	Sex: "M" 
+
 Name: "John graph"	Age: 21	Sex: "M" 
+
 Name: "Michael graph"	Age: 67	Sex: "M" 
+
 Name: "Patsy graph"	Age: 44	Sex: "F" 
+
 Name: "Joan graph"	Age: 55	Sex: "F" 
+
 Name: "June graph"	Age: 33	Sex: "F" 
+
 Name: "April graph"	Age: 22	Sex: "F" 
+
 Name: "May graph"	Age: 12	Sex: "F" 
+
 Name: "Betty graph"	Age: 19	Sex: "F" 
+
 Name: "Theresa graph"	Age: 67	Sex: "F" 
+
 Name: "Claudette graph"	Age: 88	Sex: "F" 
+
 Name: "Cheryl graph"	Age: 27	Sex: "F" 
+
 Name: "Pamela graph"	Age: 73	Sex: "F" 
 
 ```
@@ -75,15 +94,25 @@ CREATE (patient20: Patient {patientID: "20", fullName: "Pamela graph", Age: "73"
 ### Create 10 disease conditions with property “Type” for the following:
 
 •	Heart disease
+
 •	Kidney disease
+
 •	Diabetes
+
 •	Breast Cancer
+
 •	Lung Cancer
+
 •	Blood Pressure
+
 •	Obesity 
+
 •	Pancreatic Cancer
+
 •	Crohns Disease
+
 •	Prostrate Cancer 
+
 
 ![1st 5 females](https://user-images.githubusercontent.com/70437668/161478800-79a2d445-3d05-40cf-9b72-68dc6b9cc35d.jpg)
 
@@ -103,15 +132,21 @@ CREATE (disease10: Disease {diseaseID: "10", diseaseType: "Prostate Cancer"})
 ### Create 4 doctors with 4 properties two should be family doctors and two should be specialists:
 
 •	Name 
+
 •	Age
+
 •	Sex 
+
 •	Speciality “Family Doctor”,” Specialist” 
 
 ![1st 5 females](https://user-images.githubusercontent.com/70437668/161478830-0eb49e6c-e364-4db9-8ec8-c2b5727103e9.jpg)
 
 Name: "Dr Jones"	Age: 45	Sex: "M"	Speciality: "Family Doctor" 
+
 Name: "Dr Moses"	Age: 35	Sex: "M"	Speciality: "Specialist" 
+
 Name: "Dr Ann"	Age: 55	Sex: "F"	Speciality: "Family Doctor" 
+
 Name: "Dr Susan"	Age: 42	Sex: "F"	Speciality: "Specialist"
 
 ```
@@ -340,5 +375,71 @@ CREATE (p)-[r: Has_Disease]->(d)
 RETURN p, d
 ```
 
+### 4/ Andrew has “Obesity”, ”Diabetes”, ”Chrons”. 
+![Andrew](https://user-images.githubusercontent.com/70437668/161479513-1c783a34-4561-4b25-982b-d8ccc81cb1bc.jpg)
 
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Andrew graph" AND d.diseaseType = "Obesity" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Andrew graph" AND d. diseaseType = "Diabetes" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Andrew graph" AND d. diseaseType = "Crohns Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+### Henry has “Lung cancer”, ”Pancreatic”.
+![Andrew](https://user-images.githubusercontent.com/70437668/161479520-a5866aed-d646-474b-98fb-fc6b5c946132.jpg)
+
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Henry graph" AND d. diseaseType = "Lung Cancer" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Henry graph" AND d. diseaseType = "Pancreatic Cancer" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+
+### Betty has “Lung Cancer”, “Diabetes”. 
+![Andrew](https://user-images.githubusercontent.com/70437668/161479526-de80a79c-c062-4a9d-a5e4-c420b115d932.jpg)
+
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Betty graph" AND d. diseaseType = "Lung Cancer" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Betty graph" AND d. diseaseType = "Diabetes" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+### Theresa has “Crohns”. 
+![Theresa](https://user-images.githubusercontent.com/70437668/161479532-2a4fd2f3-84da-4df8-b431-9f54b217f074.jpg)
+
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Theresa graph" AND d. diseaseType = "Crohns Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+### Claudette has “Diabetes”.
+![Claudette](https://user-images.githubusercontent.com/70437668/161479541-6b0b4813-9df8-4e1c-884a-e14706412799.jpg)
+
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Claudette graph" AND d. diseaseType = "Diabetes" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+### 5/ Create the relationship “Treats_Disease” associate the two specialists with “Breast Cancer”, ”Pancreatic Cancer”, ”Lung Cancer”, ”Prostate Cancer”. 
 
