@@ -12,9 +12,9 @@ This repository contains the analysis of a basic Hospital / Clinic's dataset to 
 
 - `Neo4j`
 
-- `SQL`
+- `SQL` (in progress)
 
-- `Azure`
+- `Azure` (in progress)
 
 ## Nodes on Neo4j
 
@@ -501,3 +501,97 @@ MATCH (dr:Doctor), (d:Disease) WHERE dr.Specialty = "Family Doctor" AND d. disea
 CREATE (dr)-[r: Treats_Disease]->(d) 
 RETURN dr, d
 ```
+
+## Analytical Questions
+
+### 1 - Which patients do “Dr Moses” treats? 
+
+![Q1 - Dr Moses](https://user-images.githubusercontent.com/70437668/161480741-d1d9b8bb-b035-48c7-b71b-0a9a423913d9.jpg)
+
+```
+MATCH (dr:Doctor)-[:Treats_Disease]->(d:Disease)<-[:Has_Disease]-(p:Patient)
+WHERE dr.Name = "Dr Moses"
+RETURN DISTINCT dr.Name AS Doctor_Name,  p.fullName as Patient_Name
+```
+
+![Q1 - Dr Moses](https://user-images.githubusercontent.com/70437668/161480752-96895d6d-bfe4-4643-85d5-97936589a79c.jpg)
+
+```
+MATCH (dr:Doctor)-[:Treats_Disease]->(d:Disease)<-[:Has_Disease]-(p:Patient)
+WHERE dr.Name = "Dr Moses"
+RETURN DISTINCT dr, d, p
+```
+
+
+### 2 - Which doctors treat patients over 40, show the doctor’s name and patient name  
+![Q1 - Dr Moses](https://user-images.githubusercontent.com/70437668/161480766-1407bff3-ea87-4ba6-9fd3-5645411e4b3a.jpg)
+
+```
+MATCH (dr:Doctor)-[:Treats_Disease]->(d:Disease)<-[:Has_Disease]-(p:Patient)
+WHERE toInteger(p.Age) > 40
+RETURN DISTINCT p.fullName as Patient_Name
+```
+
+![Q1 - Dr Moses](https://user-images.githubusercontent.com/70437668/161480775-dbe76b06-a408-4a26-9bfa-71e06676261b.jpg)
+
+```
+MATCH (dr:Doctor)-[:Treats_Disease]->(d:Disease)<-[:Has_Disease]-(p:Patient)
+WHERE toInteger(p.Age) > 40
+RETURN DISTINCT dr, d, p
+```
+
+### 3 - Find all the doctors that treat “Betty Johnson” and show what they are treating her for – show both the graph and then the table with doctor’s name, patient Name and Disease Type 
+
+![Q1 - Dr Moses](https://user-images.githubusercontent.com/70437668/161480797-6b07c2c0-7b80-4aab-b5b3-34320c93ad56.jpg)
+
+```
+MATCH (dr:Doctor)-[:Treats_Disease]->(d:Disease)<-[:Has_Disease]-(p:Patient)
+WHERE p.fullName = "Betty graph"
+RETURN DISTINCT dr.Name AS Doctor_Name, p.fullName as Patient_Name, d.diseaseType as Disease_Type
+```
+
+![Q1 - Dr Moses](https://user-images.githubusercontent.com/70437668/161480803-d7d4e0ba-eca5-4e6f-b040-a4daf2ae2287.jpg)
+
+```
+MATCH (dr:Doctor)-[:Treats_Disease]->(d:Disease)<-[:Has_Disease]-(p:Patient)
+WHERE p.fullName = "Betty graph"
+RETURN DISTINCT dr, d, p
+```
+
+
+### 4 – Show me all the patients who have a female doctor
+
+![Q4 - female doctor graph](https://user-images.githubusercontent.com/70437668/161480821-5f2692ba-a40b-4ed8-bd62-0c020e741630.jpg)
+
+```
+MATCH (dr:Doctor)-[:Treats_Disease]->(d:Disease)<-[:Has_Disease]-(p:Patient)
+WHERE dr.Sex = "F"
+RETURN DISTINCT dr, d, p
+```
+
+![Q4 - female doctor graph](https://user-images.githubusercontent.com/70437668/161480837-6b98dd4c-f134-445f-ae34-7df787368624.jpg)
+
+```
+MATCH (dr:Doctor)-[:Treats_Disease]->(d:Disease)<-[:Has_Disease]-(p:Patient)
+WHERE dr.Sex = "F"
+RETURN DISTINCT dr.Name AS Doctor_Name, p.fullName as Patient_Name, d.diseaseType as Disease_Type
+```
+
+### 5 – Show me all the patients who have a female doctor and that has any form of cancer 
+
+![Q5 - female doctor cancer graph](https://user-images.githubusercontent.com/70437668/161480843-fc5209ec-1def-4e05-a870-6e739ecd12bf.jpg)
+
+```
+MATCH (dr:Doctor)-[:Treats_Disease]->(d:Disease)<-[:Has_Disease]-(p:Patient)
+WHERE dr.Sex = "F" AND dr.Specialty = "Specialist"
+RETURN DISTINCT dr, d, p
+```
+
+![Q5 - female doctor cancer graph](https://user-images.githubusercontent.com/70437668/161480852-d0edb47e-ee93-4e3e-88b3-ce1242a0742a.jpg)
+
+```
+MATCH (dr:Doctor)-[:Treats_Disease]->(d:Disease)<-[:Has_Disease]-(p:Patient)
+WHERE dr.Sex = "F" AND dr.Specialty = "Specialist"
+RETURN DISTINCT dr.Name AS Doctor_Name, p.fullName as Patient_Name, d.diseaseType as Disease_Type
+```
+
