@@ -26,28 +26,26 @@ Create a graph database that has 20 patients with 3 properties – 10 should be 
 •	Age
 •	Sex
 
-Name | Age | Sex
----- | ----
-Orren graph | 25 | M 
-Joe graph | 27 | M 
-Paul graph | 55 | M 
-David graph | 42 | M 
-Peter graph | 35 | M 
-Andrew graph | 26 | M 
-Henry graph | 29 | M 
-Patrick graph | 34 | M 
-John graph | 21 | M 
-Michael graph | 67 | M 
-Patsy graph | 44 | F 
-Joan graph | 55 | F 
-June graph | 33 | F 
-April graph | 22 | F 
-May graph | 12 | F 
-Betty graph | 19 | F 
-Theresa graph | 67 | F 
-Claudette graph | 88 | F 
-Cheryl graph | 27	| F 
-Pamela graph | 73	| F 
+Name: "Orren graph"	Age: 25	Sex: "M" 
+Name: "Joe graph"	Age: 27	Sex: "M" 
+Name: "Paul graph"	Age: 55	Sex: "M" 
+Name: "David graph"	Age: 42	Sex: "M" 
+Name: "Peter graph"	Age: 35	Sex: "M" 
+Name: "Andrew graph"	Age: 26	Sex: "M" 
+Name: "Henry graph"	Age: 29	Sex: "M" 
+Name: "Patrick graph"	Age: 34	Sex: "M" 
+Name: "John graph"	Age: 21	Sex: "M" 
+Name: "Michael graph"	Age: 67	Sex: "M" 
+Name: "Patsy graph"	Age: 44	Sex: "F" 
+Name: "Joan graph"	Age: 55	Sex: "F" 
+Name: "June graph"	Age: 33	Sex: "F" 
+Name: "April graph"	Age: 22	Sex: "F" 
+Name: "May graph"	Age: 12	Sex: "F" 
+Name: "Betty graph"	Age: 19	Sex: "F" 
+Name: "Theresa graph"	Age: 67	Sex: "F" 
+Name: "Claudette graph"	Age: 88	Sex: "F" 
+Name: "Cheryl graph"	Age: 27	Sex: "F" 
+Name: "Pamela graph"	Age: 73	Sex: "F" 
 
 ```
 CREATE (patient1: Patient {patientID: "1", fullName: "Orren graph", Age: "25", Sex: "M"})
@@ -84,6 +82,30 @@ CREATE (patient20: Patient {patientID: "20", fullName: "Pamela graph", Age: "73"
 •	Pancreatic Cancer
 •	Crohns Disease
 •	Prostrate Cancer 
+
+Type: "Heart Disease" 
+Type: "Kidney Disease" 
+Type: "Diabetes" 
+Type: "Breast Cancer" 
+Type: "Lung Cancer" 
+Type: "Blood Pressure" 
+Type: "Obesity" 
+Type: "Pancreatic Cancer" 
+Type: "Crohns Disease" 
+Type: "Prostate Cancer"
+
+```
+CREATE (disease1: Disease {diseaseID: "1", diseaseType: "Heart Disease"})
+CREATE (disease2: Disease {diseaseID: "2", diseaseType: "Kidney Disease"})
+CREATE (disease3: Disease {diseaseID: "3", diseaseType: "Diabetes"})
+CREATE (disease4: Disease {diseaseID: "4", diseaseType: "Breast Cancer"})
+CREATE (disease5: Disease {diseaseID: "5", diseaseType: "Lung Cancer"})
+CREATE (disease6: Disease {diseaseID: "6", diseaseType: "Blood Pressure"})
+CREATE (disease7: Disease {diseaseID: "7", diseaseType: "Obesity"})
+CREATE (disease8: Disease {diseaseID: "8", diseaseType: "Pancreatic Cancer"})
+CREATE (disease9: Disease {diseaseID: "9", diseaseType: "Crohns Disease"})
+CREATE (disease10: Disease {diseaseID: "10", diseaseType: "Prostate Cancer"})
+```
 
 ### Create 4 doctors with 4 properties two should be family doctors and two should be specialists:
 
