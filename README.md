@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the analysis of a basic Hospital / Clinic's dataset to demonstrate skills: creating nodes on Graph and retrieve insights on Neo4j in Cypher and do the same way in SQL on Azure.
+This repository contains the analysis of a basic Hospital / Clinic's dataset to demonstrate skills: creating nodes on Graph and retrieve insights on Neo4j in Cypher and applying the same way in SQL on Azure to design tables and retrieve insights
 
 ## Languages and Tools:
 
