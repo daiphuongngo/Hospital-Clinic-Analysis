@@ -114,5 +114,42 @@ CREATE (disease10: Disease {diseaseID: "10", diseaseType: "Prostate Cancer"})
 •	Sex 
 •	Speciality “Family Doctor”,” Specialist” 
 
+Name: "Dr Jones"	Age: 45	Sex: "M"	Speciality: "Family Doctor" 
+Name: "Dr Moses"	Age: 35	Sex: "M"	Speciality: "Specialist" 
+Name: "Dr Ann"	Age: 55	Sex: "F"	Speciality: "Family Doctor" 
+Name: "Dr Susan"	Age: 42	Sex: "F"	Speciality: "Specialist"
+
+```
+CREATE (doctor1: Doctor {doctorID: "1", Name: "Dr Jones", Age: "45", Sex: "M", Specialty: "Family Doctor"})
+CREATE (doctor2: Doctor {doctorID: "2", Name: "Dr Moses", Age: "35", Sex: "M", Specialty: "Specialist"})
+CREATE (doctor3: Doctor {doctorID: "3", Name: "Dr Ann", Age: "55", Sex: "F", Specialty: "Family Doctor"})
+CREATE (doctor4: Doctor {doctorID: "4", Name: "Dr Susan", Age: "45", Sex: "F", Specialty: "Specialist"})
+```
+
+## Relationships
+
+### 1/ Create a relationship “Has_Disease”  and associate  10 patients (the first 5 men and the first 5 women)  with “Kidney disease”, “Heart Disease” and “Blood Pressure”  
+
+#### 1// Orren
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Orren graph" AND d. diseaseType = "Kidney Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Orren graph" AND d. diseaseType = "Heart Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Orren graph" AND d. diseaseType = "Blood Pressure" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+#### 
+
 
 
