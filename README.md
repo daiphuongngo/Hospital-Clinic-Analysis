@@ -443,3 +443,61 @@ RETURN p, d
 
 ### 5/ Create the relationship “Treats_Disease” associate the two specialists with “Breast Cancer”, ”Pancreatic Cancer”, ”Lung Cancer”, ”Prostate Cancer”. 
 
+![4 doctors](https://user-images.githubusercontent.com/70437668/161480044-213c12a6-0330-44f7-b192-15928a223a1b.jpg)
+
+#### Dr Moses & Dr Susan
+```
+MATCH (dr:Doctor), (d:Disease) WHERE dr.Specialty = "Specialist" AND d. diseaseType = "Breast Cancer" 
+CREATE (dr)-[r: Treats_Disease]->(d) 
+RETURN dr, d
+```
+```
+MATCH (dr:Doctor), (d:Disease) WHERE dr.Specialty = "Specialist" AND d. diseaseType = "Pancreatic Cancer" 
+CREATE (dr)-[r: Treats_Disease]->(d) 
+RETURN dr, d
+```
+```
+MATCH (dr:Doctor), (d:Disease) WHERE dr.Specialty = "Specialist" AND d. diseaseType = "Lung Cancer" 
+CREATE (dr)-[r: Treats_Disease]->(d) 
+RETURN dr, d
+```
+```
+MATCH (dr:Doctor), (d:Disease) WHERE dr.Specialty = "Specialist" AND d. diseaseType = "Prostate Cancer" 
+CREATE (dr)-[r: Treats_Disease]->(d) 
+RETURN dr, d
+```
+
+### Then associate the two Family Doctors  with “Heart Disease”, ”Kidney Disease”, ”Diabetes”, ”Blood Pressure”, ”Obesity”, ”Crohns Disease” 
+
+#### Dr Ann & Dr Jones
+```
+MATCH (dr:Doctor), (d:Disease) WHERE dr.Specialty = "Family Doctor" AND d. diseaseType = "Heart Disease" 
+CREATE (dr)-[r: Treats_Disease]->(d) 
+RETURN dr, d
+```
+
+```
+MATCH (dr:Doctor), (d:Disease) WHERE dr.Specialty = "Family Doctor"  AND d. diseaseType = "Kidney Disease" 
+CREATE (dr)-[r: Treats_Disease]->(d) 
+RETURN dr, d
+```
+```
+MATCH (dr:Doctor), (d:Disease) WHERE dr.Specialty = "Family Doctor"  AND d. diseaseType = "Diabetes" 
+CREATE (dr)-[r: Treats_Disease]->(d) 
+RETURN dr, d
+```
+```
+MATCH (dr:Doctor), (d:Disease) WHERE dr.Specialty = "Family Doctor" AND d. diseaseType = "Blood Pressure" 
+CREATE (dr)-[r: Treats_Disease]->(d) 
+RETURN dr, d
+```
+```
+MATCH (dr:Doctor), (d:Disease) WHERE dr.Specialty = "Family Doctor" AND d. diseaseType =  "Obesity" 
+CREATE (dr)-[r: Treats_Disease]->(d) 
+RETURN dr, d
+```
+```
+MATCH (dr:Doctor), (d:Disease) WHERE dr.Specialty = "Family Doctor" AND d. diseaseType = "Crohns Disease" 
+CREATE (dr)-[r: Treats_Disease]->(d) 
+RETURN dr, d
+```
