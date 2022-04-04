@@ -130,6 +130,8 @@ CREATE (doctor4: Doctor {doctorID: "4", Name: "Dr Susan", Age: "45", Sex: "F", S
 
 ### 1/ Create a relationship “Has_Disease”  and associate  10 patients (the first 5 men and the first 5 women)  with “Kidney disease”, “Heart Disease” and “Blood Pressure”  
 
+![1st 5 males](https://user-images.githubusercontent.com/70437668/161478687-531d5723-45ec-4702-aeb0-aad78b3ea791.jpg)
+
 #### 1// Orren
 ```
 MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Orren graph" AND d. diseaseType = "Kidney Disease" 
@@ -183,5 +185,125 @@ CREATE (p)-[r: Has_Disease]->(d)
 RETURN p, d
 ```
 
-####
+#### 4// David
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "David graph" AND d. diseaseType = "Kidney Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "David graph" AND d. diseaseType = "Heart Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "David graph" AND d. diseaseType = "Blood Pressure" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+#### 5// Peter
+
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Peter graph" AND d. diseaseType = "Kidney Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Peter graph" AND d. diseaseType = "Heart Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Peter graph" AND d. diseaseType = "Blood Pressure" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+![1st 5 females](https://user-images.githubusercontent.com/70437668/161478701-f25cdc90-b042-494c-9cef-02670c1d32a7.jpg)
+
+#### 11// Patsy
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Patsy graph" AND d. diseaseType = "Kidney Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Patsy graph" AND d. diseaseType = "Heart Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Patsy graph" AND d. diseaseType = "Blood Pressure" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+#### 12// Joan
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Joan graph" AND d. diseaseType = "Kidney Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Joan graph" AND d. diseaseType = "Heart Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Joan graph" AND d. diseaseType = "Blood Pressure" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+#### 13// June
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "June graph" AND d. diseaseType = "Kidney Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "June graph" AND d. diseaseType = "Heart Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "June graph" AND d. diseaseType = "Blood Pressure" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+#### 14// April
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "April graph" AND d. diseaseType = "Kidney Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "April graph" AND d. diseaseType = "Heart Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "April graph" AND d. diseaseType = "Blood Pressure" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+#### 15// May
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "May graph" AND d. diseaseType = "Kidney Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "May graph" AND d. diseaseType = "Heart Disease" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "May graph" AND d. diseaseType = "Blood Pressure" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
 
