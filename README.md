@@ -26,6 +26,8 @@ Create a graph database that has 20 patients with 3 properties – 10 should be 
 •	Age
 •	Sex
 
+![1st 5 females](https://user-images.githubusercontent.com/70437668/161478794-4f98996a-49cb-4a68-b04d-e96ad5f1627a.jpg)
+
 Name: "Orren graph"	Age: 25	Sex: "M" 
 Name: "Joe graph"	Age: 27	Sex: "M" 
 Name: "Paul graph"	Age: 55	Sex: "M" 
@@ -83,16 +85,7 @@ CREATE (patient20: Patient {patientID: "20", fullName: "Pamela graph", Age: "73"
 •	Crohns Disease
 •	Prostrate Cancer 
 
-Type: "Heart Disease" 
-Type: "Kidney Disease" 
-Type: "Diabetes" 
-Type: "Breast Cancer" 
-Type: "Lung Cancer" 
-Type: "Blood Pressure" 
-Type: "Obesity" 
-Type: "Pancreatic Cancer" 
-Type: "Crohns Disease" 
-Type: "Prostate Cancer"
+![1st 5 females](https://user-images.githubusercontent.com/70437668/161478800-79a2d445-3d05-40cf-9b72-68dc6b9cc35d.jpg)
 
 ```
 CREATE (disease1: Disease {diseaseID: "1", diseaseType: "Heart Disease"})
@@ -113,6 +106,8 @@ CREATE (disease10: Disease {diseaseID: "10", diseaseType: "Prostate Cancer"})
 •	Age
 •	Sex 
 •	Speciality “Family Doctor”,” Specialist” 
+
+![1st 5 females](https://user-images.githubusercontent.com/70437668/161478830-0eb49e6c-e364-4db9-8ec8-c2b5727103e9.jpg)
 
 Name: "Dr Jones"	Age: 45	Sex: "M"	Speciality: "Family Doctor" 
 Name: "Dr Moses"	Age: 35	Sex: "M"	Speciality: "Specialist" 
@@ -306,4 +301,23 @@ CREATE (p)-[r: Has_Disease]->(d)
 RETURN p, d
 ```
 
+### 2/ Your next 3 female (Patsy, Cheryl, Pamela) patients should have the relationship “Has_Disease” associated with “Breast Cancer”.
+![3 females breast cancer](https://user-images.githubusercontent.com/70437668/161478883-f7294c9e-bd5d-4a2d-afc0-2a26aee149fb.jpg)
 
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Patsy graph" AND d.diseaseType = "Breast Cancer" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Cheyrl graph" AND d.diseaseType = "Breast Cancer" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Pamela graph" AND d.diseaseType = "Breast Cancer" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+### 3/ Add 3 male patients (Parick, John, Michael) with the relationship to ”Prostate Cancer”
