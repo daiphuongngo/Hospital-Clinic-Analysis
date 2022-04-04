@@ -321,3 +321,24 @@ RETURN p, d
 ```
 
 ### 3/ Add 3 male patients (Parick, John, Michael) with the relationship to ”Prostate Cancer”
+
+![3 males prostate cancer](https://user-images.githubusercontent.com/70437668/161479087-f6c96b38-e5ae-4f53-b895-b9181bfc84a9.jpg)
+
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Patrick graph" AND d.diseaseType = "Prostate Cancer" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "John graph" AND d.diseaseType = "Prostate Cancer" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+```
+MATCH (p:Patient), (d:Disease) WHERE p.fullName = "Michael graph" AND d.diseaseType = "Prostate Cancer" 
+CREATE (p)-[r: Has_Disease]->(d) 
+RETURN p, d
+```
+
+
+
