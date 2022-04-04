@@ -26,28 +26,28 @@ Create a graph database that has 20 patients with 3 properties – 10 should be 
 •	Age
 •	Sex
 
- Name | Age | Sex
-------|------
+Name | Age | Sex
+---- | ----
 Orren graph | 25 | M 
-| Joe graph | 27 | M 
-| Paul graph | 55 | M 
-| David graph | 42 | M 
-| Peter graph | 35 | M |
-| Andrew graph | 26 | M |
-| Henry graph | 29 | M |
-| Patrick graph | 34 | M |
-| John graph | 21 | M |
-| Michael graph | 67 | M |
-| Patsy graph | 44 | F |
-| Joan graph | 55 | F |
-| June graph | 33 | F |
-| April graph | 22 | F |
-| May graph | 12 | F |
-| Betty graph | 19 | F |
-| Theresa graph | 67 | F |
-| Claudette graph | 88 | F |
-| Cheryl graph | 27	| F |
-Pamela graph | 73	| F |
+Joe graph | 27 | M 
+Paul graph | 55 | M 
+David graph | 42 | M 
+Peter graph | 35 | M 
+Andrew graph | 26 | M 
+Henry graph | 29 | M 
+Patrick graph | 34 | M 
+John graph | 21 | M 
+Michael graph | 67 | M 
+Patsy graph | 44 | F 
+Joan graph | 55 | F 
+June graph | 33 | F 
+April graph | 22 | F 
+May graph | 12 | F 
+Betty graph | 19 | F 
+Theresa graph | 67 | F 
+Claudette graph | 88 | F 
+Cheryl graph | 27	| F 
+Pamela graph | 73	| F 
 
 ```
 CREATE (patient1: Patient {patientID: "1", fullName: "Orren graph", Age: "25", Sex: "M"})
