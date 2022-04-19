@@ -336,7 +336,7 @@ CREATE (p)-[r: Has_Disease]->(d)
 RETURN p, d
 ```
 
-### 2/ Your next 3 female (Patsy, Cheryl, Pamela) patients should have the relationship “Has_Disease” associated with “Breast Cancer”.
+### 2/ The next 3 female (Patsy, Cheryl, Pamela) patients should have the relationship “Has_Disease” associated with “Breast Cancer”.
 ![3 females breast cancer](https://user-images.githubusercontent.com/70437668/161478883-f7294c9e-bd5d-4a2d-afc0-2a26aee149fb.jpg)
 
 ```
@@ -559,7 +559,7 @@ RETURN DISTINCT dr, d, p
 ```
 
 
-### 4 – Show me all the patients who have a female doctor
+### 4 – Show all the patients who have a female doctor
 
 ![Q4 - female doctor graph](https://user-images.githubusercontent.com/70437668/161480821-5f2692ba-a40b-4ed8-bd62-0c020e741630.jpg)
 
@@ -577,7 +577,7 @@ WHERE dr.Sex = "F"
 RETURN DISTINCT dr.Name AS Doctor_Name, p.fullName as Patient_Name, d.diseaseType as Disease_Type
 ```
 
-### 5 – Show me all the patients who have a female doctor and that has any form of cancer 
+### 5 – Show all the patients who have a female doctor and that has any form of cancer 
 
 ![Q5 - female doctor cancer graph](https://user-images.githubusercontent.com/70437668/161480843-fc5209ec-1def-4e05-a870-6e739ecd12bf.jpg)
 
