@@ -14,7 +14,7 @@ This repository contains the analysis of a basic Hospital / Clinic's dataset to 
 
 - `SQL` (in progress)
 
-- `Azure` (in progress)
+- `Azure Machine Learning Studio` (in progress)
 
 ## Nodes on Neo4j
 
